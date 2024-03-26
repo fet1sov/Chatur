@@ -1,0 +1,33 @@
+{
+  "name": "chatur",
+  "version": "1.0.0",
+  "description": "Youtube on screen live chat",
+  "main": "dist/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tsc && node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fet1sov/Catalyst.git"
+  },
+  "keywords": [
+    "chat",
+    "youtube",
+    "live"
+  ],
+  "author": "fet1sov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fet1sov/Catalyst/issues"
+  },
+  "homepage": "https://github.com/fet1sov/Catalyst#readme",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.30",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "socket.io": "^4.6.1",
+    "tubechat": "^1.0.3"
+  }
+}

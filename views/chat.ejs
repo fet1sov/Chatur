@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Chat</title>
+
+    <link rel="stylesheet" type="text/css" href="_styles/chat.css"/>
+    <script src="_libs/socket-io.js"></script>
+    <script src="_libs/chat.js"></script>
+
+    <script>
+        <%- `let address = "http://127.0.0.1:${port}";` %>
+        var socket = io.connect(address);
+
+        socket.on('youtubeMessage', function(msg) {
+            const messageList = document.querySelector(".messages");
+
+            let userMessage = stripHtml(msg.messageText); // Preventing any HTML code in chat message
+            let words = userMessage.split(" ");
+
+            /* Inserting an emojis in messages */
+            for (let i = 0; i < words.length; i++)
+            {
+                if (emojiExists(`${address}/_resources/emoji/${words[i]}.gif`)) 
+                {
+                    words[i] = `<img class="emoji" src="_resources/emoji/${words[i]}.gif">`;
+                }
+
+                if (emojiExists(`${address}/_resources/emoji/${words[i]}.png`)) 
+                {
+                    words[i] = `<img class="emoji" src="_resources/emoji/${words[i]}.png">`
+                }
+            }
+            
+            userMessage = words.join(" ");
+
+            if (msg.roles.indexOf('moderator') != -1) {
+                messageList.insertAdjacentHTML('beforeend', `
+                <li class="yt-message" data-id="${msg.messageId}">
+                    <div class="yt-user-badges">
+                        <img class="rounded-badge" src="_resources/_badges/moderator.png">
+                    </div>
+                    
+                    <div class="yt-user-name moder">${msg.nickname}: </div>
+                    
+                    <div class="yt-user-message">${userMessage}</div>
+                </li>
+                `);
+            } else if (msg.roles.indexOf('broadcaster') != -1) {
+                messageList.insertAdjacentHTML('beforeend', `
+                <li class="yt-message" data-id="${msg.messageId}">
+                    <div class="yt-user-badges">
+                        <img width="21" height="46" style="margin-right: 10px;" src="_resources/_badges/broadcaster.gif">
+                    </div>
+                    
+                    <div class="yt-user-name broadcaster">${msg.nickname}: </div>
+                    
+                    <div class="yt-user-message">${userMessage}</div>
+                </li>
+                `);
+            } else if (msg.roles.indexOf('verified') != -1) {
+                messageList.insertAdjacentHTML('beforeend', `
+                <li class="yt-message" data-id="${msg.messageId}">
+                    <div class="yt-user-badges">
+                        <img class="badge" src="_resources/_badges/verified.gif">
+                    </div>
+                    
+                    <div class="yt-user-name verified">${msg.nickname}: </div>
+                    
+                    <div class="yt-user-message">${userMessage}</div>
+                </li>
+                `);
+            } else {
+                messageList.insertAdjacentHTML('beforeend', `
+                <li class="yt-message" data-id="${msg.messageId}">
+                    <div class="yt-user-badges">
+
+                    </div>
+                    
+                    <div class="yt-user-name">${msg.nickname}: </div>
+                    
+                    <div class="yt-user-message">${userMessage}</div>
+                </li>
+                `);
+            }
+        });
+
+        socket.on('youtubeMessageDelete', function(msg) {
+            document.querySelector("li[data-id=" + msg.messageId + "]").remove();
+        });
+    </script>
+</head>
+<body>
+    <ul class="messages">
+        <li class="yt-message" data-id="0">
+            <div class="yt-user-name">Test: </div>
+            
+            <div class="yt-user-message">TEST MESSAGE CHAT IS WORKING</div>
+        </li>
+    </ul>
+</body>
+</html>

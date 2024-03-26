@@ -1,0 +1,179 @@
+body {
+    font-family: "Roboto";
+    font-size: 18px;
+    line-height: 18px;
+
+    color: #FFFFFF;
+
+    text-shadow: 2px 2px 0 #000000, 
+    2px -2px 0 #000000, 
+    -2px 2px 0 #000000, 
+    -2px -2px 0 #000000, 
+    2px 0px 0 #000000, 
+    0px 2px 0 #000000, 
+    -2px 0px 0 #000000, 
+    0px -2px 0 #000000;
+
+
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.emoji {
+    width: 42px;
+    height: 42px;
+    vertical-align: middle;
+}
+
+.badge {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.rounded-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 20%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.rounded-badge-big {
+  width: 48px;
+  height: 48px;
+  border-radius: 20%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.yt-user-name {
+    margin-right: 5px;
+    color:#cbcbcb;
+}
+
+.moder {
+    color: #44D80F;
+    text-shadow: 0 0 5px #44D80F, 
+    0 0 10px #44D80F, 
+    0 0 15px #44D80F, 
+    0 0 20px #44D80F, 
+    0 0 30px #44D80F, 
+    0 0 40px #44D80F, 
+    0 0 55px #44D80F, 
+    0 0 75px #44D80F;
+}
+
+.broadcaster {
+    text-shadow: 2px 2px 0 #000000, 
+    2px -2px 0 #000000, 
+    -2px 2px 0 #000000, 
+    -2px -2px 0 #000000, 
+    2px 0px 0 #000000, 
+    0px 2px 0 #000000, 
+    -2px 0px 0 #000000, 
+    0px -2px 0 #000000;
+    animation: colorRotate .5s linear 0s infinite;
+}
+
+.membership {
+  color: #0099ff;
+  font-weight: bold;
+
+  text-shadow: 0 0 5px #0099ff, 
+    0 0 10px #0099ff, 
+    0 0 15px #0099ff, 
+    0 0 20px #0099ff, 
+    0 0 30px #0099ff, 
+    0 0 40px #0099ff, 
+    0 0 55px #0099ff, 
+    0 0 75px #0099ff;
+}
+
+.membershipLVL2 {
+  font-weight: bold;
+  color: #fc9015;
+  text-transform: uppercase;
+  animation: blur .75s ease-out infinite;
+  text-shadow: 0px 0px 5px #fc9015, 0px 0px 7px #fc9015;
+}
+
+@keyframes blur {
+  from {
+    text-shadow:0px 0px 10px #fc9015,
+      0px 0px 10px #fc9015, 
+      0px 0px 25px #fc9015,
+      0px 0px 25px #fc9015,
+      0px 0px 25px #fc9015,
+      0px 0px 25px #fc9015,
+      0px 0px 25px #fc9015,
+      0px 0px 25px #fc9015,
+      0px 0px 50px #fc9015,
+      0px 0px 50px #fc9015,
+      0px 0px 50px #cf6f01,
+      0px 0px 150px #cf6f01,
+      0px 10px 100px #cf6f01,
+      0px 10px 100px #cf6f01,
+      0px 10px 100px #cf6f01,
+      0px 10px 100px #cf6f01,
+      0px -10px 100px #cf6f01,
+      0px -10px 100px #cf6f01;
+  }
+}
+
+@keyframes colorRotate {
+  from {
+    color: #6666ff;
+  }
+  10% {
+    color: #0099ff;
+  }
+  50% {
+    color: #00ff00;
+  }
+  75% {
+    color: #ff3399;
+  }
+  100% {
+    color: #6666ff;
+  }
+}
+
+.messages {
+    height: calc(100vh - 15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+}
+
+.yt-message {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: middle;
+
+    margin-bottom: 2px;
+
+    animation: anim 15400ms;
+    animation-fill-mode: both;
+}
+
+.yt-user-message {
+    vertical-align: middle;
+}
+
+@keyframes anim {
+    0% { opacity: 0; transform: translateY(16px); }
+    1.2987012987012987% { opacity: 1; transform: none;}
+    98.7012987012987% { opacity: 1; transform: none;}
+    100% { opacity: 0; transform: translateY(-16px); }
+}
