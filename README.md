@@ -10,6 +10,9 @@ Youtube on screen live chat with flexible settings runs on **Node.js** runtime (
 
 3. Then **launch app** by using ```npm start```
 
+## Third-party
+**[TubeChat](https://github.com/zaacksb/tubechat)** - for Youtube live chat interaction by *[@zacksb](https://github.com/zaacksb/tubechat)*
+
 ## License
 Application under **[MIT](https://opensource.org/license/MIT)** license \
 **Copyright (c) 2024-present, Evstegneev (fet1sov) Konstantin**

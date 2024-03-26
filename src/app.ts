@@ -33,9 +33,6 @@ const chatSocket: ChatSocket = new ChatSocket(httpServer);
 const ytChat: YoutubeChat = new YoutubeChat(chatSocket);
 
 httpServer.listen(port, () => {
-  
-
-
   console.log(`\x1b[100m` + ` SETTINGS ` + `\x1b[40m` + `\x1b[0m` + ` Chat settings available ` + `\x1b[32m` + `http://localhost:${port}/settings` + `\x1b[0m`);
   ytChat.connectChannel(config.getChannelTag());
 });
