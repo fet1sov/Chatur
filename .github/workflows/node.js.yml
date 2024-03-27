@@ -1,4 +1,4 @@
-name: correct build
+name: ts-build
 
 on:
   push:

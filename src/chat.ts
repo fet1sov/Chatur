@@ -21,11 +21,21 @@ export class YoutubeChat {
         });
 
         this.tubeChat.on('message', ({ badges, channel, channelId, color, id, isMembership, isModerator, isNewMember, isOwner, isVerified, message, name, thumbnail, timestamp }) => {
+            let userRoles : Array<string> = [];
+            if (isModerator)
+            {
+                userRoles.push("moderator");
+            } else if (isOwner) {
+                userRoles.push("broadcaster");
+            } else if (isVerified) {
+                userRoles.push("verified");
+            }
+            
             let youtubeMessage : YoutubeMessage = {
                 messageId: id,
                 nickname: name,
                 messageText: message[0].text,
-                roles: []
+                roles: userRoles
             } as YoutubeMessage;
             ChatSocket.io.emit("youtubeMessage", youtubeMessage);
         });
