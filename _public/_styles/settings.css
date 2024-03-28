@@ -3,20 +3,51 @@
     --primary-color-02: #30a800;
 
     --secondary-color-01: #252525;
-    --secondary-color-02: #414141;
+    --secondary-color-02: #404040;
     --secondary-color-03: #ffffff;
+    --secondary-color-04: #303030;
 }
 
 body {
+    font-family: 'Segoe UI', sans-serif;
+
     display: flex;
     justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    overflow: hidden;
     background-color: var(--secondary-color-01);
 }
 
 form {
+    display: flex;
+    flex-direction: column;
+
     padding: 30px;
     background-color: var(--secondary-color-02);
     border-radius: 10px;
+}
+
+form :nth-child(n) {
+    margin-bottom: 20px;
+}
+
+input {
+    background-color: var(--secondary-color-04);
+
+    color: var(--secondary-color-03);
+
+    border: none;
+    outline: none;
+
+    border-radius: 10px;
+    padding: 15px;
+}
+
+input::placeholder {
+    color: var(--secondary-color-03);
 }
 
 form button {
@@ -28,6 +59,26 @@ form button {
     transition: 0.5s all;
     outline: none;
     border: none;
+}
+
+form .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-bottom: 0;
+}
+
+form .title .title-text {
+    color: var(--primary-color-01);
+
+    font-size: 32px;
+    font-weight: bold;
+}
+
+form .title img {
+    width: 64px;
+    height: 64px;
 }
 
 form button:hover {

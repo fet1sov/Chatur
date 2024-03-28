@@ -6,6 +6,7 @@ interface ConfigData {
 
 export class Config 
 {
+    configFilePath: string;
     configuration : ConfigData;
 
     /**
@@ -14,6 +15,8 @@ export class Config
      */
     constructor(configFilePath: string)
     {
+        this.configFilePath = configFilePath;
+
         if (fs.existsSync(configFilePath)) {
             let rawData : string = fs.readFileSync(configFilePath, 'utf8');
             this.configuration = JSON.parse(rawData);
@@ -28,5 +31,19 @@ export class Config
      */
     getChannelTag() : string {
         return this.configuration.channelTag;
+    }
+
+    /**
+     * Setting the channel tag to config
+     * @param channelTag Channel username
+     */
+    setChannelTag(channelTag : string) : void {
+        this.configuration.channelTag = channelTag;
+
+        fs.writeFile(this.configFilePath, JSON.stringify(this.configuration), function(err) {
+            if (err) {
+                console.log(err);
+            }
+        });
     }
 }

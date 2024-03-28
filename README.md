@@ -10,6 +10,10 @@ Youtube on screen live chat with flexible settings runs on **Node.js** runtime (
 
 3. Then **launch app** by using ```npm start```
 
+4. Open chat settings panel in ```http://127.0.0.1:3000/```
+
+5. Insert into your **OBS Browser Source** ```http://127.0.0.1:3000/chat```
+
 ## Third-party
 **[TubeChat](https://github.com/zaacksb/tubechat)** - for Youtube live chat interaction by *[@zacksb](https://github.com/zaacksb/tubechat)*
 

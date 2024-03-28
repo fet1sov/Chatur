@@ -8,9 +8,14 @@
     <link rel="stylesheet" type="text/css" href="_styles/settings.css"/>
 </head>
 <body>
-    <form method="post">
-        <input type="text" placeholder="Youtube channel">
-        <button type="submit">Set up </button>
+    <form method="post" enctype="application/x-www-form-urlencoded">
+        <div class="title">
+            <img src="_img/logo.png" alt="Logotype">
+            <div class="title-text">Chatur</div>
+        </div>
+
+        <input type="text" name="channelTag" value="<%= configuration.channelTag %>" placeholder="Youtube channel tag">
+        <button type="submit">Set up</button>
     </form>
 </body>
 </html>
