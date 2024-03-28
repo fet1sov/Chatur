@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/fet1sov/Chatur/main/logo.png" width="400" alt="Logotype"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/fet1sov/Chatur/main/_public/_img/logo.png" width="400" alt="Logotype"></p>
 
 ## Chatur
 Youtube on screen live chat with flexible settings runs on **Node.js** runtime (TypeScript).

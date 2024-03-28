@@ -11,6 +11,11 @@ interface YoutubeMessage {
 export class YoutubeChat {
     tubeChat : TubeChat;
 
+    /**
+     * Creates youtube chat listener
+     * Which sending all events to Socket server
+     * @param ChatSocket WebSocket server
+     */
     constructor(ChatSocket: ChatSocket)
     {
         this.tubeChat = new TubeChat();

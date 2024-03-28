@@ -7,6 +7,11 @@ interface ConfigData {
 export class Config 
 {
     configuration : ConfigData;
+
+    /**
+     * Initialize the config
+     * @param configFilePath path to configuration file
+     */
     constructor(configFilePath: string)
     {
         if (fs.existsSync(configFilePath)) {

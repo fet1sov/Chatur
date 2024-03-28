@@ -1,0 +1,36 @@
+:root {
+    --primary-color-01: #40e000;
+    --primary-color-02: #30a800;
+
+    --secondary-color-01: #252525;
+    --secondary-color-02: #414141;
+    --secondary-color-03: #ffffff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-color-01);
+}
+
+form {
+    padding: 30px;
+    background-color: var(--secondary-color-02);
+    border-radius: 10px;
+}
+
+form button {
+    background-color: var(--primary-color-01);
+    
+    padding: 10px;
+    border-radius: 5px;
+
+    transition: 0.5s all;
+    outline: none;
+    border: none;
+}
+
+form button:hover {
+    background-color: var(--primary-color-02);
+    color: var(--secondary-color-03);
+}

@@ -21,5 +21,10 @@ export class ChatSocket {
             console.log(`\x1b[44m` + `\x1b[37m` + ` INFO ` + `\x1b[40m` + `\x1b[0m` 
             + ` Detected a connection to chat`+ `\x1b[0m`);
         });
+
+        this.io.on("settings", (socket) => {
+            console.log(`\x1b[44m` + `\x1b[37m` + ` INFO ` + `\x1b[40m` + `\x1b[0m` 
+            + ` Detected a connection to chat`+ `\x1b[0m`);
+        });
     }
 }
