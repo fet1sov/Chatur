@@ -16,6 +16,10 @@
 
         <input type="text" name="channelTag" value="<%= configuration.channelTag %>" placeholder="Youtube channel tag">
         <button type="submit">Set up</button>
+
+        <% if (typeof message != "undefined") { %>
+            <div class="message"><%= message.text %></div>
+        <% } %>
     </form>
 </body>
 </html>

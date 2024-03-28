@@ -39,7 +39,10 @@ app.post("/", (request: Request, response: Response) => {
   response.render('settings', {
     port: port,
     configuration: config.configuration,
-    message: "Succesfully updated settings",
+    message: {
+      type: "",
+      text: "Success: updated settings"
+    }
   });
 });
 

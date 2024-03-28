@@ -81,6 +81,12 @@ form .title img {
     height: 64px;
 }
 
+form .message {
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary-color-01)
+}
+
 form button:hover {
     background-color: var(--primary-color-02);
     color: var(--secondary-color-03);
