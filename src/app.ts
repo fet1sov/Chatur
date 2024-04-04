@@ -34,6 +34,7 @@ app.get("/", (request: Request, response: Response) => {
 
 app.post("/", (request: Request, response: Response) => {
   config.setChannelTag(request.body.channelTag);
+  config.setFontSize(request.body.fontSize);
   ytChat.connectChannel(config.getChannelTag());
 
   response.render('settings', {

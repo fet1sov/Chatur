@@ -31,7 +31,7 @@ form {
 }
 
 form :nth-child(n) {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 input {
@@ -90,4 +90,45 @@ form .message {
 form button:hover {
     background-color: var(--primary-color-02);
     color: var(--secondary-color-03);
+}
+
+.settings-section {
+    display: flex;
+    flex-direction: column;
+    color: var(--secondary-color-03);
+}
+
+.settings-section span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+
+    margin-bottom: 0;
+}
+
+.settings-section span.youtube {
+    color: #f70000;
+}
+
+.settings-section span div {
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+
+.settings-section div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-left: 5px;
+}
+
+.settings-section div div {
+    margin-right: 5px;
+}
+
+.settings-section svg {
+    fill: #f70000;
+    margin-bottom: 0;
 }
