@@ -6,6 +6,8 @@ import { YoutubeChat } from "./chat";
 import { Config } from "./config";
 import { ChatSocket } from "./socket";
 
+import { SevenTVWrapper } from "./emoteServices/7tv";
+
 const app: Express = express();
 const port = process.env.PORT || 3000;
 
@@ -51,6 +53,16 @@ const httpServer = createServer(app);
 
 const chatSocket: ChatSocket = new ChatSocket(httpServer);
 const ytChat: YoutubeChat = new YoutubeChat(chatSocket);
+
+interface emoteServices {
+  sevenTV : SevenTVWrapper
+}
+
+let serviceWrappers = { 
+  sevenTV: new SevenTVWrapper()
+} as emoteServices;
+
+serviceWrappers.sevenTV.searchEmote("SADGE").then((data) => { console.log(data) });
 
 httpServer.listen(port, () => {
   console.log(`

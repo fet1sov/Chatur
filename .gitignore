@@ -1,3 +1,6 @@
 # Ignoring the Node.js Modules
 node_modules
 dist/
+
+# Ignore configuration file
+config
