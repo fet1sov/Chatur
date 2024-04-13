@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as path from 'path';
 
 interface ConfigData {
     channelTag: string;
@@ -22,10 +23,14 @@ export class Config
             let rawData : string = fs.readFileSync(configFilePath, 'utf8');
             this.configuration = JSON.parse(rawData);
         } else {
+            fs.mkdirSync(path.join(configFilePath, ".."));
+
             this.configuration = { 
                 channelTag: "",
                 fontSize: 18  
             } as ConfigData;
+
+            fs.writeFileSync(this.configFilePath, JSON.stringify(this.configuration));
         }
     }
 
