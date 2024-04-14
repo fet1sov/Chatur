@@ -23,7 +23,11 @@ export class Config
             let rawData : string = fs.readFileSync(configFilePath, 'utf8');
             this.configuration = JSON.parse(rawData);
         } else {
-            fs.mkdirSync(path.join(configFilePath, ".."));
+            if (fs.existsSync(path.join(configFilePath, "..")))
+            {
+                fs.mkdirSync(path.join(configFilePath, ".."));
+            }
+            
 
             this.configuration = { 
                 channelTag: "",
