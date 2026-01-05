@@ -1,35 +1,39 @@
 {
-  "name": "chatur",
+  "name": "my-new-app",
+  "productName": "my-new-app",
   "version": "1.0.0",
-  "description": "Youtube on screen live chat",
-  "main": "dist/app.js",
+  "description": "My Electron application description",
+  "main": ".vite/build/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm i && npx tsc && node ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint --ext .ts,.tsx ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fet1sov/Catalyst.git"
+  "keywords": [],
+  "author": {
+    "name": "fet1sov",
+    "email": "august9222@gmail.com"
   },
-  "keywords": [
-    "chat",
-    "youtube",
-    "live"
-  ],
-  "author": "fet1sov",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/fet1sov/Catalyst/issues"
-  },
-  "homepage": "https://github.com/fet1sov/Catalyst#readme",
   "dependencies": {
-    "@types/body-parser": "^1.19.5",
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.11.30",
-    "ejs": "^3.1.9",
-    "express": "^4.19.2",
-    "socket.io": "^4.6.1",
-    "tubechat": "^1.0.3",
-    "typescript": "^5.4.3"
+    "electron-squirrel-startup": "^1.0.1",
+    "vue": "^3.5.26"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.10.2",
+    "@electron-forge/maker-deb": "^7.10.2",
+    "@electron-forge/maker-rpm": "^7.10.2",
+    "@electron-forge/maker-squirrel": "^7.10.2",
+    "@electron-forge/maker-zip": "^7.10.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
+    "@electron-forge/plugin-fuses": "^7.10.2",
+    "@electron-forge/plugin-vite": "^7.10.2",
+    "@electron/fuses": "^1.8.0",
+    "@types/electron-squirrel-startup": "^1.0.2",
+    "@vitejs/plugin-vue": "^6.0.3",
+    "electron": "39.2.7",
+    "vite": "^7.3.0"
   }
 }
