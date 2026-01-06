@@ -1,0 +1,11 @@
+{
+    "menu": {
+        "sections": {
+            "general": "General",
+            "chat": "Chat settings"
+        }
+    },
+    "general": {
+        "aboutlink": "Copy and paste it your OBS Browser source"
+    }
+}

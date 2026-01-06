@@ -4,9 +4,12 @@ module.exports = {
             colors: {
                 'lighttheme': {
                     'primary': {
-                        'primary': '#ffffff',
-                        'secondary': '#d7d7d7'
+                        'primary': '#f1f1f1',
+                        'secondary': '#ffffff'
                     },
+                    'secondary': {
+                        'primary': '#000000'
+                    }
                 }
             }
         }
