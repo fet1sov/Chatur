@@ -19,9 +19,12 @@
   "license": "MIT",
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "@types/express": "^5.0.6",
     "electron-squirrel-startup": "^1.0.1",
     "tailwindcss": "^4.1.18",
-    "vue": "^3.5.26"
+    "vue": "^3.5.26",
+    "vue-i18n": "^11.2.8",
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.10.2",
