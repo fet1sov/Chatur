@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { GlobalConfiguration } from '../../configuration';
 import { ref, Ref } from 'vue';
 
-const port : Ref<string> = ref("3000");
+const port : Ref<string> = ref(String(GlobalConfiguration.httpServerPort));
 </script>
 
 <template>

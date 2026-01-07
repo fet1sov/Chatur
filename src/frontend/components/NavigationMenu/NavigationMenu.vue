@@ -12,6 +12,10 @@ const menuSections : Array<MenuSection> = [
     {
         "title": t("menu.sections.chat"),
         "route": "/chat"
+    },
+    {
+        "title": t("menu.sections.services"),
+        "route": "/services"
     }
 ];
 </script>

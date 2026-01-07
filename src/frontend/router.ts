@@ -7,6 +7,7 @@ export const router = createRouter({
     routes: [
         { path: '/', component: index },
         { path: '/chat', component: chat },
+        { path: '/services', component: chat },
     ],
     history: createWebHistory()
 });

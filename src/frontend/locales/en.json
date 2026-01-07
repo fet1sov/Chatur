@@ -2,7 +2,8 @@
     "menu": {
         "sections": {
             "general": "General",
-            "chat": "Chat settings"
+            "chat": "Chat settings",
+            "services": "Connection"
         }
     },
     "general": {

@@ -19,9 +19,13 @@
   "license": "MIT",
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "@types/ejs": "^3.1.5",
     "@types/express": "^5.0.6",
+    "cors": "^2.8.5",
     "electron-squirrel-startup": "^1.0.1",
+    "express": "^5.2.1",
     "tailwindcss": "^4.1.18",
+    "tubechat": "^1.0.18",
     "vue": "^3.5.26",
     "vue-i18n": "^11.2.8",
     "vue-router": "^4.6.4"
@@ -36,6 +40,7 @@
     "@electron-forge/plugin-fuses": "^7.10.2",
     "@electron-forge/plugin-vite": "^7.10.2",
     "@electron/fuses": "^1.8.0",
+    "@types/cors": "^2.8.19",
     "@types/electron-squirrel-startup": "^1.0.2",
     "@vitejs/plugin-vue": "^6.0.3",
     "electron": "39.2.7",

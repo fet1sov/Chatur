@@ -2,7 +2,8 @@
     "menu": {
         "sections": {
             "general": "Общее",
-            "chat": "Настройки чата"
+            "chat": "Настройки чата",
+            "services": "Подключение"
         }
     },
     "general": {
