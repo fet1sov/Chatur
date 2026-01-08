@@ -4,6 +4,12 @@
             "general": "Общее",
             "chat": "Настройки чата",
             "services": "Подключение"
+        },
+        "services": {
+            "integration": "интеграция",
+            "youtube": {
+                "placeholder": "Напишите тег канала здесь (Начинается с @)"
+            }
         }
     },
     "general": {

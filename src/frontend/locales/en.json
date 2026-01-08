@@ -4,6 +4,12 @@
             "general": "General",
             "chat": "Chat settings",
             "services": "Connection"
+        },
+        "services": {
+            "integration": "integration",
+            "youtube": {
+                "placeholder": "Type your channel tag here (It's starts from @)"
+            }
         }
     },
     "general": {

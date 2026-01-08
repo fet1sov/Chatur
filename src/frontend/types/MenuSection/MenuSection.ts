@@ -1,7 +1,5 @@
-import { DefineComponent } from "vue";
-
 export default interface MenuSection {
-    icon?: DefineComponent,
+    icon?: string,
     title: string;
     route: string;
 }
