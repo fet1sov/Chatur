@@ -1,7 +1,9 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import path from 'node:path';
 import started from 'electron-squirrel-startup';
 import ChatServer from './backend/ChatServer';
+
+let expressServer : ChatServer = new ChatServer();
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
@@ -32,15 +34,17 @@ const createWindow = () => {
   }
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  if (process.env.NODE_ENV === 'development')
+  {
+    mainWindow.webContents.openDevTools();
+  }
 };
 
 async function startExpressServer() : Promise<void> {
   try {
-    const server = new ChatServer();
-    server.serveServer();
+    await expressServer.serveServer();
   } catch (error) {
-    console.error('Failed to start Express server:', error)
+    console.error('Failed to start Express server:', error);
   }
 }
 
@@ -51,6 +55,10 @@ app.on('ready', async () => {
   await startExpressServer();
   createWindow();
 });
+
+ipcMain.handle('get-server-info', async () => {
+  return expressServer.getServerInfo();
+})
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits

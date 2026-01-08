@@ -1,8 +1,31 @@
 <script setup lang="ts">
-import { GlobalConfiguration } from '../../configuration';
-import { ref, Ref } from 'vue';
+import { ServerInfo } from '../../shared/ServerInfo';
+import { onMounted, ref, Ref } from 'vue';
 
-const port : Ref<string> = ref(String(GlobalConfiguration.httpServerPort));
+const serverInfo : Ref<ServerInfo> = ref({
+    port: 3000
+} as ServerInfo);
+
+declare global {
+  interface Window {
+    electronAPI: {
+      getServerInfo: () => Promise<ServerInfo>;
+    };
+  }
+}
+
+const fetchServerInfo = async () => {
+  try {
+    const info = await window.electronAPI.getServerInfo();
+    serverInfo.value = info;
+  } catch(error) {
+    console.error(`Failed to fetch the express server info: ${error}`);
+  }
+}
+
+onMounted(async () => {
+    await fetchServerInfo();
+});
 </script>
 
 <template>
@@ -10,6 +33,6 @@ const port : Ref<string> = ref(String(GlobalConfiguration.httpServerPort));
 
     <div>
         <p>{{ $t("general.aboutlink") }}</p>
-        <p>http://localhost:{{ port }}</p>
+        <p>http://localhost:{{ serverInfo.port }}</p>
     </div>
 </template>
