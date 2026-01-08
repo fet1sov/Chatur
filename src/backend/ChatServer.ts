@@ -5,10 +5,9 @@ import bodyParser from "body-parser";
 import { Server as SocketServer } from "socket.io";
 import { ChatInfo } from "../shared/ChatInfo";
 import { createServer } from "http";
-import { ClientToServerEvents, ServerToClientEvents } from "./ServerEvents";
+import { ClientToServerEvents, ServerToClientEvents } from "./types/ServerEvents";
 import { engine } from 'express-handlebars';
-import path from "path";
-
+import YouTubeChatAPI from "./YouTubeChatAPI";
 
 export default class ChatServer {
     private app: Express;
@@ -19,6 +18,9 @@ export default class ChatServer {
         this.app = express();
         this.configureApp();
         this.configureRoutes();
+
+        /* Implementing the APIs of streaming services */
+        new YouTubeChatAPI(this);
     }
 
     private configureApp(): void {
@@ -37,7 +39,7 @@ export default class ChatServer {
         this.app.set('view engine', '.hbs');
         this.app.use(bodyParser.json());
         this.app.use(express.urlencoded({ extended: true }));
-        this.app.use(express.static(__dirname + '/public/'));
+        this.app.use(express.static('libs'));
     }
 
     private configureRoutes(): void {
@@ -72,6 +74,10 @@ export default class ChatServer {
             console.log(`Error in running the app: ${error}`);
             return null;
         }
+    }
+
+    public getSocketIO(): SocketServer {
+        return this.ioServer;
     }
 
     public getServerInfo(): ServerInfo {

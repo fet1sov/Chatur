@@ -29,6 +29,7 @@
     "electron-squirrel-startup": "^1.0.1",
     "express": "^5.2.1",
     "express-handlebars": "^8.0.4",
+    "flow-monitor": "^1.0.8",
     "socket.io": "^4.8.3",
     "tailwindcss": "^4.1.18",
     "tubechat": "^1.0.18",
