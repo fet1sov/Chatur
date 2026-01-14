@@ -52,6 +52,10 @@ ipcMain.handle('get-server-info', async () => {
   return expressServer.getServerInfo();
 })
 
+ipcMain.handle('set-chat-config', async () => {
+  //return expressServer.setChatConfiguration();
+})
+
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();

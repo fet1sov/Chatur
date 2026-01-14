@@ -11,6 +11,9 @@ module.exports = {
                         'primary': '#000000',
                         'light': '#e0e0e0'
                     }
+                },
+                'tomato': {
+                    'primary': "#FF0000"
                 }
             }
         }

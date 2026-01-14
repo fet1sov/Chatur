@@ -25,7 +25,7 @@ const menuSections : Array<MenuSection> = [
     <nav 
     class="w-full min-w-[220px] max-w-[250px] h-[100vh] border-r border-lighttheme-secondary-light bg-lighttheme-primary-secondary">
         <ul>
-            <li :class="'transition-all duration-700 hover:bg-lighttheme-secondary-primary hover:text-lighttheme-primary-secondary ' + (this.$route.path == menuItem.route ? 'bg-lighttheme-secondary-primary text-lighttheme-primary-secondary' : '')" v-for="menuItem in menuSections">
+            <li :class="'transition-all duration-700 hover:bg-lighttheme-secondary-primary hover:text-lighttheme-primary-secondary ' + ($route.path == menuItem.route ? 'bg-lighttheme-secondary-primary text-lighttheme-primary-secondary' : '')" v-for="menuItem in menuSections">
                 <RouterLink class="flex flex-row items-center" :to="menuItem.route">
                     <div class="w-[48px] h-[48px]">
                         <inline-svg :src="menuItem.icon" width="48" height="48" fill="black"/>

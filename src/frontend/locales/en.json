@@ -14,5 +14,12 @@
     },
     "general": {
         "aboutlink": "Copy and paste it your OBS Browser source"
+    },
+    "splash": {
+        "savechanges": "Do you wanna apply the changes?",
+        "buttons": {
+            "ok": "Yes",
+            "cancel": "Cancel"
+        }
     }
 }

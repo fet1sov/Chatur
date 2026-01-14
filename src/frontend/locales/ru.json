@@ -14,5 +14,12 @@
     },
     "general": {
         "aboutlink": "Скопируйте и вставте это в ваш Браузер внутри OBS"
+    },
+    "splash": {
+        "savechanges": "",
+        "buttons": {
+            "ok": "Да",
+            "cancel": "Отмеда"
+        }
     }
 }

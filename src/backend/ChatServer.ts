@@ -8,11 +8,13 @@ import { createServer } from "http";
 import { ClientToServerEvents, ServerToClientEvents } from "./types/ServerEvents";
 import { engine } from 'express-handlebars';
 import YouTubeChatAPI from "./YouTubeChatAPI";
+import ChatConfiguration from "./types/ChatConfiguration";
 
 export default class ChatServer {
     private app: Express;
     private server: Server | null;
     private ioServer: SocketServer;
+    private youtubeChat: YouTubeChatAPI;
 
     constructor() {
         this.app = express();
@@ -20,7 +22,7 @@ export default class ChatServer {
         this.configureRoutes();
 
         /* Implementing the APIs of streaming services */
-        new YouTubeChatAPI(this);
+        this.youtubeChat = new YouTubeChatAPI(this);
     }
 
     private configureApp(): void {
@@ -90,6 +92,10 @@ export default class ChatServer {
         return {
             fontSize: 14
         } as ChatInfo;
+    }
+
+    public setChatConfiguration(ChatConfiguration: ChatConfiguration): void {
+        
     }
 }
 
